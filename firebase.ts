@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
-import "dotenv/config";
+import { DATABASE_URL } from "./databaseUrl";
 
 const {
   API_KEY,
@@ -10,7 +10,6 @@ const {
   STORAGE_BUCKET,
   MESSAGING_SENDER_ID,
   APP_ID,
-  DATABASE_URL,
 } = process.env;
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -27,9 +26,10 @@ const firebaseConfig = {
   databaseURL: DATABASE_URL,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
+console.log({ firebaseConfig });
 
-export { app, database };
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
+
+// Initialize Realtime Database and get a reference to the service
+export const database = getDatabase(app);

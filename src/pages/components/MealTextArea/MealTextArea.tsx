@@ -4,9 +4,10 @@ import { capitalize } from "@/util/helpers";
 type Props = {
   name: string;
   content: string | "";
+  setValue: (content: string) => void;
 };
 
-function MealTextArea({ name, content }: Props): JSX.Element {
+function MealTextArea({ name, content, setValue }: Props): JSX.Element {
   return (
     <Form.Group className="mb-3">
       <Form.Label>{capitalize(name)}</Form.Label>
@@ -15,9 +16,11 @@ function MealTextArea({ name, content }: Props): JSX.Element {
         id={name}
         className="form-control form-control-lg"
         rows={3}
-      >
-        {content}
-      </textarea>
+        value={content}
+        onInput={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+          setValue(e.target.value)
+        }
+      ></textarea>
     </Form.Group>
   );
 }
