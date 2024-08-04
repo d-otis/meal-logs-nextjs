@@ -4,12 +4,14 @@ import { ref, set, child, get } from "firebase/database";
 import { formatCurrentDate } from "@/util/helpers";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 import MealTextArea from "../MealTextArea";
 
 function InputForm(): JSX.Element {
   const [breakfast, setBreakfast] = useState("");
   const [lunch, setLunch] = useState("");
   const [dinner, setDinner] = useState("");
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     // TODO: abstract this away to another file that just contains Firebase RTDB concerns
@@ -51,12 +53,15 @@ function InputForm(): JSX.Element {
   const handleSubmit = () => {
     // TODO: display success banner/indicator
     // TODO: abstract away this saving function to an external file
+    setSaving(true);
 
     set(ref(db, "meals/" + formatCurrentDate()), {
       breakfast,
       lunch,
       dinner,
     });
+
+    setSaving(false);
   };
 
   return (
@@ -69,9 +74,11 @@ function InputForm(): JSX.Element {
           setValue={meal.setValue}
         />
       ))}
+
       <Button onClick={handleSubmit} data-testid="submit-button">
         Save
       </Button>
+      {saving && <Spinner animation="border" />}
     </Form>
   );
 }
