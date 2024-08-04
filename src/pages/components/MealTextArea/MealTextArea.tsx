@@ -12,6 +12,7 @@ function MealTextArea({ name, content, setValue }: Props): JSX.Element {
     <Form.Group className="mb-3">
       <Form.Label>{capitalize(name)}</Form.Label>
       <textarea
+        data-testid={`${name}-textarea`}
         name={name}
         id={name}
         className="form-control form-control-lg"

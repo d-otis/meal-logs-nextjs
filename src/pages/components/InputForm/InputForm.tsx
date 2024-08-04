@@ -12,6 +12,7 @@ function InputForm(): JSX.Element {
   const [dinner, setDinner] = useState("");
 
   useEffect(() => {
+    // TODO: abstract this away to another file that just contains Firebase RTDB concerns
     get(child(ref(db), `meals/${formatCurrentDate()}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
@@ -57,9 +58,10 @@ function InputForm(): JSX.Element {
   };
 
   return (
-    <Form>
+    <Form data-testid="form-container">
       {meals.map((meal) => (
         <MealTextArea
+          data-testid={`${meal.name}-textarea`}
           key={meal.name}
           name={meal.name}
           content={meal.content}
