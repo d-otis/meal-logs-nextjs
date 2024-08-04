@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { database as db } from "../../../../firebase";
-import { ref, set } from "firebase/database";
+import { ref, set, child, get } from "firebase/database";
 import { formatCurrentDate } from "@/util/helpers";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -10,6 +10,24 @@ function InputForm(): JSX.Element {
   const [breakfast, setBreakfast] = useState("");
   const [lunch, setLunch] = useState("");
   const [dinner, setDinner] = useState("");
+
+  useEffect(() => {
+    get(child(ref(db), `meals/${formatCurrentDate()}`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const log = snapshot.val();
+          setBreakfast(log.breakfast);
+          setLunch(log.lunch);
+          setDinner(log.dinner);
+        } else {
+          // TODO: set error message/banner
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error({ error });
+      });
+  }, []);
 
   const meals = [
     {
