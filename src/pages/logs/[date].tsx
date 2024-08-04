@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
+import React from "react";
 
-function DateArchive() {
+function DateArchive(): JSX.Element {
   const router = useRouter();
   const { date } = router.query;
 

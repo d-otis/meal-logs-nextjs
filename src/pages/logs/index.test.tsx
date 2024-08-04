@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import Logs from ".";
 import NewLog from "../components/NewLog";
 
 describe("Logs", () => {
