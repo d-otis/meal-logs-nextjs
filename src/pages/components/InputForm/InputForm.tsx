@@ -61,7 +61,6 @@ function InputForm(): JSX.Element {
     <Form data-testid="form-container">
       {meals.map((meal) => (
         <MealTextArea
-          data-testid={`${meal.name}-textarea`}
           key={meal.name}
           name={meal.name}
           content={meal.content}
