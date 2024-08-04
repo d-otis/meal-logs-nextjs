@@ -1,17 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Daily Meal Entries (Next.js + Firebase)
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+firebase emulators:start # starts the RTDB (etc) emulators
+npm run dev # dev server
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -24,14 +20,50 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Todo
 
-To learn more about Next.js, take a look at the following resources:
+### General
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] jest tests for everything!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Replicate Current Functionality
+
+- [ ] copying feature
+- [ ] editing past days feature
+- [ ] keyboard shortcut for saving
+- [ ] yesterday navbar link + show-page
+
+### Realtime Database
+
+- [ ] make sure I'm set up with auth/security rules etc by end of 30-day testing mode
+- [ ] in Express app: create a link to copy all data from RTDB to Firestore via JSON file with following structure:
+
+  ```json
+  {
+    "meals": {
+      "2021-09-01": {
+        "breakfast": "eggs",
+        "lunch": "salad",
+        "dinner": "pasta"
+      },
+      "2021-09-02": {
+        "breakfast": "eggs",
+        "lunch": "salad",
+        "dinner": "pasta"
+      }
+    }
+  }
+  ```
+
+  ### Authentication
+
+  - [ ] add authentication to the app via Firebase SDK setup
+  - [ ] login/logout
+  - [ ] protected routes
+
+  ### Deploy
+
+  - [ ] figure out solution with DATABASE_URL for Firebase RTDB for dynamic configuration to deal with issues loading/processing ENV variables locally
 
 ## Deploy on Vercel
 
