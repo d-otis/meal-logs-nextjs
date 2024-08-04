@@ -7,7 +7,7 @@ function Navigation(): JSX.Element {
 
   return (
     <>
-      <Navbar expand="md" className="bg-body-tertiary">
+      <Navbar expand="md" className="bg-body-tertiary" data-testid="navbar">
         <Container fluid>
           <Navbar.Brand href="#home">🍴Daily Meal Logs 🥗</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -5,7 +5,7 @@ import InputForm from "../InputForm";
 
 function NewLog(): JSX.Element {
   return (
-    <Container className="mt-3">
+    <Container className="mt-3" data-testid="new-log-container">
       <Row>
         <Col>
           <InputForm />
