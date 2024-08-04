@@ -49,7 +49,9 @@ function InputForm(): JSX.Element {
   ];
 
   const handleSubmit = () => {
-    console.log({ breakfast, lunch, dinner });
+    // TODO: display success banner/indicator
+    // TODO: abstract away this saving function to an external file
+
     set(ref(db, "meals/" + formatCurrentDate()), {
       breakfast,
       lunch,

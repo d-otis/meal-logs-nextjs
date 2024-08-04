@@ -8,7 +8,7 @@ function NewLog(): JSX.Element {
     <Container className="mt-3" data-testid="new-log-container">
       <Row>
         <Col>
-          <InputForm />
+          <InputForm data-testid="input-form-container" />
         </Col>
       </Row>
     </Container>
