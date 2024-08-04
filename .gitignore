@@ -37,3 +37,5 @@ next-env.d.ts
 
 # Additons
 databaseUrl.ts
+database-debug.log
+firebase-debug.log
