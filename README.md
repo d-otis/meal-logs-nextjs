@@ -25,6 +25,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ### General
 
 - [ ] jest tests for everything!
+- [ ] do i need `<Head />` component?
 
 ### Replicate Current Functionality
 

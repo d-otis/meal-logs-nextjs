@@ -22,4 +22,14 @@ describe("InputForm", () => {
   //   expect(lunchTextArea).toBeInTheDocument();
   //   expect(dinnerTextArea).toBeInTheDocument();
   // });
+
+  it("renders the submit button", () => {
+    const { getByTestId } = render(<InputForm />);
+
+    const submitButton = getByTestId("submit-button");
+
+    expect(submitButton).toBeInTheDocument();
+  });
+
+  it("queries the database for existing data", () => {});
 });

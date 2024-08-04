@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, connectDatabaseEmulator } from "firebase/database";
 import * as config from "./firebaseConfig";
-import { DATABASE_URL } from "./databaseUrl";
+import { DATABASE_URL } from "../../databaseUrl";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,11 +20,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
-// Initialize Realtime Database and get a reference to the service
-export const database = getDatabase(app);
-
-if (typeof location !== "undefined" && location.hostname === "localhost") {
-  // Point to the RTDB emulator running on localhost.
-  connectDatabaseEmulator(database, "127.0.0.1", 9000);
-}

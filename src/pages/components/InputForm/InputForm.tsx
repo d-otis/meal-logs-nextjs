@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { database as db } from "../../../../firebase";
+import { database as db } from "@/firebase/realtimeDatabase";
 import { ref, set, child, get } from "firebase/database";
 import { formatCurrentDate } from "@/util/helpers";
 import Form from "react-bootstrap/Form";
@@ -69,7 +69,9 @@ function InputForm(): JSX.Element {
           setValue={meal.setValue}
         />
       ))}
-      <Button onClick={handleSubmit}>Save</Button>
+      <Button onClick={handleSubmit} data-testid="submit-button">
+        Save
+      </Button>
     </Form>
   );
 }
