@@ -1,0 +1,73 @@
+[debug] [2024-08-04T02:35:00.617Z] ----------------------------------------------------------------------
+[debug] [2024-08-04T02:35:00.619Z] Command:       /Users/danfoley/.nvm/versions/node/v20.16.0/bin/node /Users/danfoley/.nvm/versions/node/v20.16.0/bin/firebase emulators:start
+[debug] [2024-08-04T02:35:00.619Z] CLI Version:   13.14.2
+[debug] [2024-08-04T02:35:00.619Z] Platform:      darwin
+[debug] [2024-08-04T02:35:00.619Z] Node Version:  v20.16.0
+[debug] [2024-08-04T02:35:00.619Z] Time:          Sat Aug 03 2024 21:35:00 GMT-0500 (Central Daylight Time)
+[debug] [2024-08-04T02:35:00.619Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-04T02:35:00.654Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-04T02:35:00.654Z] > authorizing via signed-in user (danielofoley@gmail.com)
+[debug] [2024-08-04T02:35:00.683Z] java version "22.0.2" 2024-07-16
+
+[debug] [2024-08-04T02:35:00.684Z] Java(TM) SE Runtime Environment (build 22.0.2+9-70)
+Java HotSpot(TM) 64-Bit Server VM (build 22.0.2+9-70, mixed mode, sharing)
+
+[debug] [2024-08-04T02:35:00.686Z] Parsed Java major version: 22
+[info] i  emulators: Starting emulators: database {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: database"}}
+[debug] [2024-08-04T02:35:00.921Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-08-04T02:35:00.921Z] [database] Database Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-08-04T02:35:00.921Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-08-04T02:35:00.923Z] [hub] writing locator at /var/folders/x7/gbjt6g0j01b67xr9l7bz5l8c0000gn/T/hub-daily-meal-entries.json
+[debug] [2024-08-04T02:35:00.925Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/daily-meal-entries [none]
+[debug] [2024-08-04T02:35:01.141Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/daily-meal-entries 200
+[debug] [2024-08-04T02:35:01.141Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/daily-meal-entries {"projectId":"daily-meal-entries","projectNumber":"359642355516","displayName":"daily-meal-entries","name":"projects/daily-meal-entries","resources":{"hostingSite":"daily-meal-entries","realtimeDatabaseInstance":"daily-meal-entries-default-rtdb"},"state":"ACTIVE","etag":"1_f31ca5f4-750a-494e-848f-302d476f6b8b"}
+[debug] [2024-08-04T02:35:01.141Z] database rules config:  [{"instance":"daily-meal-entries-default-rtdb","rules":"/Users/danfoley/Desktop/dev/next-daily-meal-entries/database.rules.json"}]
+[debug] [2024-08-04T02:35:01.144Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2024-08-04T02:35:01.144Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-08-04T02:35:01.144Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2024-08-04T02:35:01.144Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/danfoley/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning"],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false,"shell":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/Users/danfoley/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\"],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2024-08-04T02:35:01.643Z] 21:35:01.642 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"21:35:01.642 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2024-08-04T02:35:01.713Z] 21:35:01.713 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"21:35:01.713 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000\n"}}
+[debug] [2024-08-04T02:35:01.754Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-08-04T02:35:01.754Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-08-04T02:35:01.754Z] Starting Emulator UI with command {"binary":"node","args":["/Users/danfoley/.cache/firebase/emulators/ui-v1.13.0/server/server.mjs"],"optionalArgs":[],"joinArgs":false,"shell":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/danfoley/.cache/firebase/emulators/ui-v1.13.0/server/server.mjs\"],\"optionalArgs\":[],\"joinArgs\":false,\"shell\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-08-04T02:35:01.815Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-08-04T02:35:01.815Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[debug] [2024-08-04T02:35:01.958Z] >>> [apiv2][query] PUT http://127.0.0.1:9000/.settings/rules.json ns=daily-meal-entries-default-rtdb
+[debug] [2024-08-04T02:35:01.958Z] >>> [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json "{\n  \"rules\": {\n    \".read\": \"now < 1724734800000\",  // 2024-8-27\n    \".write\": \"now < 1724734800000\",  // 2024-8-27\n  }\n}"
+[debug] [2024-08-04T02:35:02.107Z] 21:35:02.107 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - daily-meal-entries-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 56ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"21:35:02.107 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - daily-meal-entries-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 56ms, init: 0ms\n"}}
+[debug] [2024-08-04T02:35:02.144Z] 21:35:02.144 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace daily-meal-entries-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"21:35:02.144 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace daily-meal-entries-default-rtdb status Active to Active\n"}}
+[debug] [2024-08-04T02:35:02.161Z] <<< [apiv2][status] PUT http://127.0.0.1:9000/.settings/rules.json 200
+[debug] [2024-08-04T02:35:02.161Z] <<< [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json {"status":"ok"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┬────────────────────────────────┐
+│ Emulator │ Host:Port      │ View in Emulator UI            │
+├──────────┼────────────────┼────────────────────────────────┤
+│ Database │ 127.0.0.1:9000 │ http://127.0.0.1:4000/database │
+└──────────┴────────────────┴────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-08-04T02:49:20.217Z] 21:49:20.217 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace daily-meal-entries, but the emulator is configured for daily-meal-entries-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+ {"metadata":{"emulator":{"name":"database"},"message":"21:49:20.217 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested \nnamespace daily-meal-entries, but the emulator is configured for daily-meal-entries-default-rtdb. To \nopt-out of single project mode add/set the singleProjectMode: false property in \nthe firebase.json emulators config. \n"}}
+[debug] [2024-08-04T02:49:20.222Z] 21:49:20.222 [NamespaceSystem-akka.actor.default-dispatcher-18] INFO com.firebase.core.namespace.NamespaceActor - daily-meal-entries successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"21:49:20.222 [NamespaceSystem-akka.actor.default-dispatcher-18] INFO com.firebase.core.namespace.NamespaceActor - daily-meal-entries successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms\n"}}
