@@ -1,6 +1,5 @@
 import { render } from "@testing-library/react";
 import MealTextArea from "./MealTextArea";
-import { text } from "stream/consumers";
 
 describe("MealTextArea", () => {
   it("renders the textarea", () => {
