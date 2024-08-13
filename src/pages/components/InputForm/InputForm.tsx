@@ -5,17 +5,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
-
-import MealTextArea from "../MealTextArea";
 import { DailyMeals } from "@/types";
+import MealTextArea from "../MealTextArea";
 
 type Props = {
-  dailyMeals: {
-    breakfast: string;
-    lunch: string;
-    dinner: string;
-    [key: string]: string;
-  };
+  dailyMeals: DailyMeals;
   setMeals: React.Dispatch<React.SetStateAction<DailyMeals>>;
   date: string;
 };
