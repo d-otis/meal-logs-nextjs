@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import NewLog from "../components/NewLog";
+import NewLog from "../../components/NewLog";
 
 describe("Logs", () => {
   it("mounts NewLog", () => {

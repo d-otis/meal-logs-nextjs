@@ -12,3 +12,9 @@ export const formatCurrentDate = () => {
 export const capitalize = (string: string): string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
+
+export const mealsInitialState = {
+  breakfast: "",
+  lunch: "",
+  dinner: "",
+};

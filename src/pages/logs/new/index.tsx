@@ -1,4 +1,4 @@
-import NewLog from "../components/NewLog";
+import NewLog from "../../components/NewLog";
 
 function Logs(): JSX.Element {
   return <NewLog />;

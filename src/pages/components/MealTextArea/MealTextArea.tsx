@@ -1,13 +1,14 @@
 import Form from "react-bootstrap/Form";
+import { DailyMeals } from "@/types";
 import { capitalize } from "@/util/helpers";
 
 type Props = {
   name: string;
   content: string | "";
-  setValue: (content: string) => void;
+  setMeals: (prevMeals: DailyMeals) => void;
 };
 
-function MealTextArea({ name, content, setValue }: Props): JSX.Element {
+function MealTextArea({ name, content, setMeals }: Props): JSX.Element {
   return (
     <Form.Group className="mb-3">
       <Form.Label>{capitalize(name)}</Form.Label>
@@ -18,9 +19,12 @@ function MealTextArea({ name, content, setValue }: Props): JSX.Element {
         className="form-control form-control-lg"
         rows={3}
         value={content}
-        onInput={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-          setValue(e.target.value)
-        }
+        onChange={(e) => {
+          setMeals((prevMeals) => ({
+            ...prevMeals,
+            [name]: e.target.value,
+          }));
+        }}
       ></textarea>
     </Form.Group>
   );
