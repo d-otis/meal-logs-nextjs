@@ -7,9 +7,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import InputForm from "../InputForm";
 import { mealsInitialState } from "@/util/helpers";
+import { DailyMeals } from "@/types";
 
 function NewLog(): JSX.Element {
-  const [meals, setMeals] = useState(mealsInitialState);
+  const [meals, setMeals] = useState<DailyMeals>(mealsInitialState);
   const date = formatCurrentDate();
   console.log(`date from NewLog: ${date}`);
 

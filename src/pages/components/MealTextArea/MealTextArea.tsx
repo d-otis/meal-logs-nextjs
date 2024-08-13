@@ -5,7 +5,7 @@ import { capitalize } from "@/util/helpers";
 type Props = {
   name: string;
   content: string | "";
-  setMeals: (prevMeals: DailyMeals) => void;
+  setMeals: React.Dispatch<React.SetStateAction<DailyMeals>>;
 };
 
 function MealTextArea({ name, content, setMeals }: Props): JSX.Element {

@@ -13,7 +13,7 @@ type Props = {
     lunch: string;
     dinner: string;
   };
-  setMeals: (meals: DailyMeals) => void;
+  setMeals: React.Dispatch<React.SetStateAction<DailyMeals>>;
   date: string;
 };
 
