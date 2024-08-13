@@ -24,7 +24,6 @@ function InputForm({ dailyMeals, date, setMeals }: Props): JSX.Element {
     // TODO: display success banner/indicator
     // TODO: abstract away this saving function to an external file
     setSaving(true);
-    console.log(`date from InputForm: ${date}`);
 
     set(ref(db, "meals/" + date), {
       breakfast: dailyMeals.breakfast,

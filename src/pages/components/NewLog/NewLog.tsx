@@ -12,10 +12,8 @@ import { DailyMeals } from "@/types";
 function NewLog(): JSX.Element {
   const [meals, setMeals] = useState<DailyMeals>(mealsInitialState);
   const date = formatCurrentDate();
-  console.log(`date from NewLog: ${date}`);
 
   useEffect((): void => {
-    console.log("inside useEffect");
     // TODO: abstract this away to another file that just contains Firebase RTDB concerns
     get(child(ref(db), `meals/${formatCurrentDate()}`))
       .then((snapshot) => {
