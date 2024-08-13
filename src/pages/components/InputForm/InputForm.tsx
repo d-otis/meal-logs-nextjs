@@ -20,17 +20,23 @@ type Props = {
 
 function InputForm({ dailyMeals, date, setMeals }: Props): JSX.Element {
   const [saving, setSaving] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = (): void => {
     // TODO: display success banner/indicator
     // TODO: abstract away this saving function to an external file
     setSaving(true);
 
-    set(ref(db, "meals/" + date), {
-      breakfast: dailyMeals.breakfast,
-      lunch: dailyMeals.lunch,
-      dinner: dailyMeals.dinner,
-    });
+    try {
+      set(ref(db, "meals/" + date), {
+        breakfast: dailyMeals.breakfast,
+        lunch: dailyMeals.lunch,
+        dinner: dailyMeals.dinner,
+      });
+      setShowSuccess(true);
+    } catch (error) {
+      setShowSuccess(false);
+    }
 
     setSaving(false);
   };
