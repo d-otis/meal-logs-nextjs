@@ -4,6 +4,8 @@ import { database as db } from "@/firebase/realtimeDatabase";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
+import Alert from "react-bootstrap/Alert";
+
 import MealTextArea from "../MealTextArea";
 import { DailyMeals } from "@/types";
 
@@ -21,28 +23,39 @@ type Props = {
 function InputForm({ dailyMeals, date, setMeals }: Props): JSX.Element {
   const [saving, setSaving] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const handleSubmit = (): void => {
-    // TODO: display success banner/indicator
     // TODO: abstract away this saving function to an external file
     setSaving(true);
 
-    try {
-      set(ref(db, "meals/" + date), {
-        breakfast: dailyMeals.breakfast,
-        lunch: dailyMeals.lunch,
-        dinner: dailyMeals.dinner,
-      });
-      setShowSuccess(true);
-    } catch (error) {
-      setShowSuccess(false);
-    }
+    set(ref(db, "meals/" + date), {
+      breakfast: dailyMeals.breakfast,
+      lunch: dailyMeals.lunch,
+      dinner: dailyMeals.dinner,
+    });
+    setShowSuccess(true);
+    setShowError(false);
 
     setSaving(false);
   };
 
   return (
     <Form data-testid="form-container">
+      {showSuccess && (
+        <Alert
+          variant="success"
+          onClose={() => setShowSuccess(false)}
+          dismissible
+        >
+          Successfully saved!
+        </Alert>
+      )}
+      {showError && (
+        <Alert variant="danger" onClose={() => setShowError(false)} dismissible>
+          Error saving data! Check the console for more information.
+        </Alert>
+      )}
       {Object.keys(dailyMeals).map((meal) => (
         <MealTextArea
           key={meal}
