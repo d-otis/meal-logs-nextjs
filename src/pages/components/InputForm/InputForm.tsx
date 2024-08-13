@@ -12,6 +12,7 @@ type Props = {
     breakfast: string;
     lunch: string;
     dinner: string;
+    [key: string]: string;
   };
   setMeals: React.Dispatch<React.SetStateAction<DailyMeals>>;
   date: string;
@@ -36,21 +37,15 @@ function InputForm({ dailyMeals, date, setMeals }: Props): JSX.Element {
 
   return (
     <Form data-testid="form-container">
-      <MealTextArea
-        name="breakfast"
-        content={dailyMeals.breakfast}
-        setMeals={setMeals}
-      />
-      <MealTextArea
-        name="lunch"
-        content={dailyMeals.lunch}
-        setMeals={setMeals}
-      />
-      <MealTextArea
-        name="dinner"
-        content={dailyMeals.dinner}
-        setMeals={setMeals}
-      />
+      {Object.keys(dailyMeals).map((meal) => (
+        <MealTextArea
+          key={meal}
+          name={meal}
+          content={dailyMeals[meal]}
+          setMeals={setMeals}
+        />
+      ))}
+
       <Button onClick={handleSubmit} data-testid="submit-button">
         Save
       </Button>
