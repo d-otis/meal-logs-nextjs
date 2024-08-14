@@ -21,9 +21,8 @@ function DateArchive(): JSX.Element {
       .then((snapshot) => {
         if (snapshot.exists()) {
           const log = snapshot.val();
-          console.log({ log });
+
           setMeals(log);
-          console.log({ meals });
         } else {
           console.log("No data available");
         }
