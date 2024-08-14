@@ -5,7 +5,7 @@ import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export const formatCurrentDate = () => {
+export const formatCurrentDate = (): string => {
   return dayjs().tz("America/Chicago").format("YYYY-MM-DD");
 };
 
@@ -17,4 +17,12 @@ export const mealsInitialState = {
   breakfast: "",
   lunch: "",
   dinner: "",
+};
+
+export const getYesterdaysDate = (): string => {
+  return dayjs().tz("America/Chicago").subtract(1, "day").format("YYYYMMDD");
+};
+
+export const formatDate = (date: string): string => {
+  return dayjs(date).format("YYYY-MM-DD");
 };

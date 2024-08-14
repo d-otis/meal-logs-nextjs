@@ -1,9 +1,14 @@
+import { useRouter } from "next/router";
+import { getYesterdaysDate } from "@/util/helpers";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 function Navigation(): JSX.Element {
+  const router = useRouter();
   let loggedIn = true; // TODO: pass this in dynamically from whatever handles auth/session
+
+  const handleYesterdayClick = () => {};
 
   return (
     <>
