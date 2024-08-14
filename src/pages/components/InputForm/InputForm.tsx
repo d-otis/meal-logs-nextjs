@@ -32,6 +32,10 @@ function InputForm({ dailyMeals, date, setMeals }: Props): JSX.Element {
     setShowError(false);
 
     setSaving(false);
+
+    setInterval(() => {
+      setShowSuccess(false);
+    }, 3000);
   };
 
   return (

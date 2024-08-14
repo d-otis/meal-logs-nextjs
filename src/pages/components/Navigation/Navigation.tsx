@@ -9,7 +9,7 @@ function Navigation(): JSX.Element {
     <>
       <Navbar expand="md" className="bg-body-tertiary" data-testid="navbar">
         <Container fluid>
-          <Navbar.Brand href="/logs">🍴Daily Meal Logs 🥗</Navbar.Brand>
+          <Navbar.Brand href="/logs/new">🍴Daily Meal Logs 🥗</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             {loggedIn && (
