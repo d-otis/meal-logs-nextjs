@@ -7,7 +7,7 @@ describe("MealTextArea", () => {
       <MealTextArea
         name="snack"
         content="bowl of popcorn"
-        setValue={jest.fn()}
+        setMeals={jest.fn()}
       />
     );
 

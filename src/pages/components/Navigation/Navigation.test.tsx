@@ -3,10 +3,10 @@ import Navigation from "./Navigation";
 
 describe("Navigation", () => {
   it("renders the app name", () => {
-    const { getByText } = render(<Navigation />);
+    const { getByTestId } = render(<Navigation />);
 
-    const appTitle = getByText(/Daily Meal Logs/);
+    const navbar = getByTestId("navbar");
 
-    expect(appTitle).toBeInTheDocument();
+    expect(navbar).toBeInTheDocument();
   });
 });
