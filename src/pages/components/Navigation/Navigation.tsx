@@ -1,8 +1,11 @@
+import { useRouter } from "next/navigation";
+import { getYesterdaysDate } from "@/util/helpers";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 function Navigation(): JSX.Element {
+  const router = useRouter();
   let loggedIn = true; // TODO: pass this in dynamically from whatever handles auth/session
 
   return (
@@ -14,7 +17,11 @@ function Navigation(): JSX.Element {
           <Navbar.Collapse id="basic-navbar-nav">
             {loggedIn && (
               <Nav className="me-auto">
-                <Nav.Link href="/yesterday">Yesterday</Nav.Link>
+                <Nav.Link
+                  onClick={() => router.push(`/logs/${getYesterdaysDate()}`)}
+                >
+                  Yesterday
+                </Nav.Link>
                 <Nav.Link href="/logs" target="_blank">
                   All Logs
                 </Nav.Link>
