@@ -62,6 +62,9 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
   - [ ] login/logout
   - [ ] protected routes
 
+  ### GitHub Testing
+  - [ ] Set-up DB config to use conditional imports w/ GH Action ENV vars so failing tests can potentially block merging PRs
+  
   ### Deploy
 
   - [ ] figure out solution with DATABASE_URL for Firebase RTDB for dynamic configuration to deal with issues loading/processing ENV variables locally
