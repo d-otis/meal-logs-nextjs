@@ -36,6 +36,13 @@ function DateArchive(): JSX.Element {
     <Container className="my-3">
       <Row>
         <Col>
+          <h1>
+            You are editing the past{" "}
+            <small className="text-body-secondary">
+              {"//"} {formatDate(date as string)}
+            </small>
+          </h1>
+
           <InputForm
             dailyMeals={meals}
             date={formatDate(date as string)}
